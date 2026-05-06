@@ -10,3 +10,11 @@ export type ParseResult<T> = {
   data?: T;
   error?: string;
 };
+
+export type DedupedSubscriptionResult = {
+  totalCount: number;
+  uniqueCount: number;
+  duplicateCount: number;
+  uniqueSubscriptions: YouTubeSubscription[];
+  duplicates: YouTubeSubscription[];
+};
