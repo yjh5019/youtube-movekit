@@ -40,6 +40,14 @@ Record significant choices here so future work doesn't re-litigate them.
 
 ---
 
+## D-06 — Shared YouTube types live in `types/youtube.ts`
+**Date:** 2026-05-06  
+**Decision:** Domain types (`YouTubeSubscription`, `ParseResult`) are in `types/youtube.ts`, not `lib/types.ts`.  
+**Reason:** Keeps shared domain types separate from `lib/` business logic modules. Follows the convention that `lib/` contains functions, not type declarations.  
+**Consequences:** `ARCHITECTURE.md` and `TASKS.md` updated to match. Future types for YouTube domain objects should go in `types/` as well.
+
+---
+
 ## Template for new decisions
 ```
 ## D-NN — Short title

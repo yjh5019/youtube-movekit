@@ -28,9 +28,12 @@ components/
   Footer.tsx
 
 lib/
-  csv.ts              — parseSubscriptionsCsv, deduplicateCsv, exportToCsv
+  takeout-parser.ts   — parseSubscriptionsCsv
+  csv.ts              — deduplicateCsv, exportToCsv
   estimate.ts         — migrationEstimate(rowCount): { min: string; max: string }
-  types.ts            — shared TypeScript types
+
+types/
+  youtube.ts          — shared YouTube domain types (YouTubeSubscription, ParseResult)
 
 public/
   (static assets only)
@@ -47,20 +50,21 @@ User drops file
           → Export button calls lib/csv.ts exportToCsv(rows) → triggers download
 ```
 
-## Key types (lib/types.ts)
+## Key types (types/youtube.ts)
 
 ```ts
-export interface Subscription {
-  channelId: string;
-  channelUrl: string;
+export type YouTubeSubscription = {
+  channelId?: string;
+  channelUrl?: string;
   channelTitle: string;
-}
+  sourceRow?: Record<string, string>;
+};
 
-export interface DeduplicationResult {
-  total: number;
-  unique: Subscription[];
-  duplicateCount: number;
-}
+export type ParseResult<T> = {
+  ok: boolean;
+  data?: T;
+  error?: string;
+};
 ```
 
 ## Parsing approach

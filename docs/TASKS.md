@@ -9,8 +9,8 @@ Check [MVP_SCOPE.md](MVP_SCOPE.md) before starting any task — do not implement
 ## Phase 0 — Foundation (do first)
 
 - [ ] **T-01** Replace default `app/page.tsx` with landing page scaffold (hero, value prop, how-it-works section, waitlist CTA placeholder, nav, footer). Static content only, no logic.
-- [ ] **T-02** Create `lib/types.ts` with `Subscription` and `DeduplicationResult` types (see ARCHITECTURE.md).
-- [ ] **T-03** Create `lib/csv.ts` with `parseSubscriptionsCsv`, `deduplicateCsv`, `exportToCsv`. Unit-testable pure functions. No JSX.
+- [x] **T-02** Create `types/youtube.ts` with `YouTubeSubscription` and `ParseResult` types. *(Done — `lib/types.ts` name superseded by `types/youtube.ts`, see D-06)*
+- [ ] **T-03** Create `lib/csv.ts` with `deduplicateCsv`, `exportToCsv`. `parseSubscriptionsCsv` already lives in `lib/takeout-parser.ts`. Unit-testable pure functions. No JSX.
 - [ ] **T-04** Create `lib/estimate.ts` with `migrationEstimate`.
 
 ## Phase 1 — Analyze page
