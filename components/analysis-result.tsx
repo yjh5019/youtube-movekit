@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import type { DedupedSubscriptionResult } from "@/types/youtube";
 import { subscriptionsToCsv } from "@/lib/csv-export";
 import EmailCapture from "@/components/email-capture";
@@ -44,17 +45,27 @@ export default function AnalysisResult({
   estimatedDays,
   onReset,
 }: Props) {
+  const [downloadError, setDownloadError] = useState<string | null>(null);
+
   function handleDownload() {
-    const csv = subscriptionsToCsv(result.uniqueSubscriptions);
-    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "youtube-subscriptions-cleaned.csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    setDownloadError(null);
+    try {
+      const csv = subscriptionsToCsv(result.uniqueSubscriptions);
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "youtube-subscriptions-cleaned.csv";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error("CSV download failed:", err);
+      setDownloadError(
+        "파일 다운로드에 실패했습니다. 다시 시도해 주세요."
+      );
+    }
   }
 
   return (
@@ -87,6 +98,11 @@ export default function AnalysisResult({
           다른 파일 분석하기
         </button>
       </div>
+      {downloadError && (
+        <p role="alert" className="text-sm text-red-600">
+          {downloadError}
+        </p>
+      )}
 
       <EmailCapture />
     </div>

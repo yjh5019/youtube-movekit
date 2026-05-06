@@ -33,7 +33,7 @@ Wrap `URL.createObjectURL` and the anchor click in try/catch. If it fails, show 
 
 ## TypeScript discipline
 - `unknown` over `any`. Narrow with type guards or `zod` schemas.
-- `noUncheckedIndexedAccess` is on in tsconfig — index access returns `T | undefined`; handle the `undefined` case explicitly.
+- `noUncheckedIndexedAccess` is NOT enabled — index access returns `T`; bounds-check manually at risky sites rather than relying on compiler guards.
 - Never use `as SomeType` to paper over a type mismatch.
 
 ## User-facing error messages

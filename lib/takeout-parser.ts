@@ -122,18 +122,30 @@ export function parseSubscriptionsCsv(
   const text = csvText.startsWith("﻿") ? csvText.slice(1) : csvText;
 
   if (text.trim() === "") {
-    return { ok: false, error: "The CSV file is empty." };
+    return {
+      ok: false,
+      error:
+        "파일이 비어 있습니다. YouTube 데이터 보관함에서 다운로드한 subscriptions.csv 파일을 사용해 주세요.",
+    };
   }
 
   const rows = parseCSVRows(text);
 
   if (rows.length === 0) {
-    return { ok: false, error: "The CSV file is empty." };
+    return {
+      ok: false,
+      error:
+        "파일이 비어 있습니다. YouTube 데이터 보관함에서 다운로드한 subscriptions.csv 파일을 사용해 주세요.",
+    };
   }
 
   const headerRow = rows[0];
   if (!headerRow || headerRow.length === 0) {
-    return { ok: false, error: "The CSV file has no header row." };
+    return {
+      ok: false,
+      error:
+        "CSV 파일에 헤더 행이 없습니다. YouTube 데이터 보관함에서 다운로드한 파일인지 확인해 주세요.",
+    };
   }
 
   const headers = headerRow.map((h) => h.trim());
@@ -154,10 +166,9 @@ export function parseSubscriptionsCsv(
     return {
       ok: false,
       error:
-        `No recognizable columns found. Expected headers like ` +
-        `"Channel Title", "Channel URL", or "Channel Id". ` +
-        `Found: ${headers.join(", ")}. ` +
-        `Try re-downloading your YouTube Takeout archive.`,
+        `인식할 수 있는 열이 없습니다. "Channel Title", "Channel URL", "Channel Id" 헤더가 포함된 파일이 필요합니다. ` +
+        `발견된 헤더: ${headers.join(", ")}. ` +
+        `YouTube 데이터 보관함에서 파일을 다시 다운로드해 주세요.`,
     };
   }
 
@@ -201,7 +212,7 @@ export function parseSubscriptionsCsv(
     return {
       ok: false,
       error:
-        "No valid subscriptions found. The file may be a header row only, or all rows were skipped.",
+        "유효한 구독 항목이 없습니다. 헤더 행만 있거나 모든 행이 건너뛰어졌습니다. YouTube 데이터 보관함에서 파일을 다시 확인해 주세요.",
     };
   }
 
