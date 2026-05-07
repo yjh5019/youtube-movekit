@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const BASE = "https://youtube-movekit.vercel.app";
+import { SITE_URL } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -22,5 +21,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
   ];
-  return routes.map((r) => ({ url: `${BASE}${r}`, lastModified: now }));
+  return routes.map((r) => ({ url: `${SITE_URL}${r}`, lastModified: now }));
 }

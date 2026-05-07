@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import PricingCard from "@/components/pricing-card";
 import EmailCapture from "@/components/email-capture";
+
+export const metadata: Metadata = {
+  title: "요금제 | YouTube MoveKit",
+  description:
+    "YouTube MoveKit 요금제 안내입니다. 구독 분석 및 CSV 다운로드는 무료 제공, 구독 이전 기능은 준비 중입니다.",
+};
 
 const FREE_FEATURES = [
   "subscriptions.csv 분석",
@@ -117,7 +124,7 @@ export default function PricingPage() {
                 3
               </span>
               <div>
-                <p className="font-semibold text-gray-900">단계적 출시로 품질 보장</p>
+                <p className="font-semibold text-gray-900">단계적 출시로 안정성 확보</p>
                 <p className="mt-1 text-sm text-gray-600">
                   대기자 피드백을 반영하면서 OAuth 이전 기능을 순차적으로 안정화할 예정입니다.
                   먼저 무료 분석 기능으로 구독 목록을 파악하고, 이전 기능 준비가 되면 안내해 드립니다.

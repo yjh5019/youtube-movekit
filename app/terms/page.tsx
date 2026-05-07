@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "이용약관 | YouTube MoveKit",
+  description:
+    "YouTube MoveKit 이용약관입니다. 독립 서비스 안내, 현재 제공 기능, 이전 기능 제한, 금지된 사용에 대해 설명합니다.",
+};
 
 export default function TermsPage() {
   return (
@@ -11,7 +18,7 @@ export default function TermsPage() {
         </nav>
 
         <h1 className="text-3xl font-bold text-gray-900">이용약관</h1>
-        <p className="mt-2 text-sm text-gray-500">최종 업데이트: [날짜 예정]</p>
+        <p className="mt-2 text-sm text-gray-500">최종 업데이트: 2026-05-07</p>
 
         <div className="mt-10 space-y-10">
           <section>

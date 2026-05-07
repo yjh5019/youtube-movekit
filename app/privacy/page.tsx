@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "개인정보처리방침 | YouTube MoveKit",
+  description:
+    "YouTube MoveKit 개인정보처리방침입니다. 브라우저 전용 처리로 파일이 서버에 저장되지 않습니다.",
+};
 
 export default function PrivacyPage() {
   return (
@@ -34,7 +41,6 @@ export default function PrivacyPage() {
                 "구독 채널명",
                 "채널 URL",
                 "채널 ID",
-                "사용자가 직접 입력한 이메일 주소 (대기자 등록 시에만)",
               ].map((item) => (
                 <li key={item} className="flex gap-2 text-sm text-gray-700">
                   <span className="shrink-0 font-bold text-red-500">+</span>
@@ -63,13 +69,11 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-gray-900">4. 이메일 대기자 등록</h2>
+            <h2 className="text-xl font-bold text-gray-900">4. 출시 알림 이메일</h2>
             <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-              이메일 주소를 등록하는 경우, 해당 이메일은 출시 알림과 피드백 요청 용도로만 사용됩니다.
-              제3자에게 판매하거나 공유하지 않습니다.
-            </p>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
-              등록된 이메일의 삭제를 원하시면 아래 연락처로 요청하실 수 있습니다.
+              현재 별도 이메일 수집 또는 저장 시스템이 없습니다. 이전 기능 출시 알림을 원하시면
+              직접 이메일로 관심 의사를 보내주시면 됩니다. 수신한 이메일은 출시 알림 안내 외 용도로
+              사용하지 않으며 제3자에게 판매하거나 공유하지 않습니다.
             </p>
           </section>
 

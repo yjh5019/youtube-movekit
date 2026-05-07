@@ -251,7 +251,7 @@ export default function Home() {
               </dt>
               <dd className="mt-2 text-sm text-gray-600">
                 현재는 구독 목록 분석 및 CSV 내보내기만 가능합니다. 실제 구독 이전 기능(OAuth 방식)은
-                준비 중이며, 출시 시 알림을 받으시려면 위 이메일 등록을 이용해 주세요.
+                준비 중이며, 출시 시 알림을 받으시려면 위 이메일 문의를 이용해 주세요.
               </dd>
             </div>
             <div className="py-6">
