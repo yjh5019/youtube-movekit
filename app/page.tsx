@@ -180,8 +180,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Waitlist CTA */}
+      {/* Guides, Resources, Compare */}
       <section className="bg-gray-50 px-4 py-16">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-2xl font-bold text-gray-900">가이드 및 리소스</h2>
+          <p className="mt-2 text-sm text-gray-500">
+            YouTube 계정 이전을 처음 준비하는 분을 위한 단계별 가이드 모음입니다.
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <Link
+              href="/guides"
+              className="flex flex-col rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
+            >
+              <p className="font-semibold text-gray-900">이전 가이드</p>
+              <p className="mt-1 text-sm text-gray-500">Takeout 내보내기, 구독 이전 준비, 재생목록 백업</p>
+            </Link>
+            <Link
+              href="/resources"
+              className="flex flex-col rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
+            >
+              <p className="font-semibold text-gray-900">리소스</p>
+              <p className="mt-1 text-sm text-gray-500">이전 체크리스트, CSV 샘플 및 컬럼 설명</p>
+            </Link>
+            <Link
+              href="/compare"
+              className="flex flex-col rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
+            >
+              <p className="font-semibold text-gray-900">방식 비교</p>
+              <p className="mt-1 text-sm text-gray-500">Takeout 방식과 확장 프로그램 방식 비교</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Waitlist CTA */}
+      <section className="bg-white px-4 py-16">
         <div className="mx-auto max-w-2xl">
           <p className="mb-4 text-sm text-gray-500">
             먼저 무료 분석을 해보고, 이전 기능 출시 알림을 받아보세요.

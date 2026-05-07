@@ -8,30 +8,34 @@ Check [MVP_SCOPE.md](MVP_SCOPE.md) before starting any task — do not implement
 
 ## Phase 0 — Foundation (do first)
 
-- [ ] **T-01** Replace default `app/page.tsx` with landing page scaffold (hero, value prop, how-it-works section, waitlist CTA placeholder, nav, footer). Static content only, no logic.
-- [x] **T-02** Create `types/youtube.ts` with `YouTubeSubscription` and `ParseResult` types. *(Done — `lib/types.ts` name superseded by `types/youtube.ts`, see D-06)*
-- [ ] **T-03** Create `lib/csv.ts` with `deduplicateCsv`, `exportToCsv`. `parseSubscriptionsCsv` already lives in `lib/takeout-parser.ts`. Unit-testable pure functions. No JSX.
-- [ ] **T-04** Create `lib/estimate.ts` with `migrationEstimate`.
+- [x] **T-01** Replace default `app/page.tsx` with landing page scaffold (hero, value prop, how-it-works section, waitlist CTA placeholder, nav, footer). Static content only, no logic.
+- [x] **T-02** Create `types/youtube.ts` with `YouTubeSubscription` and `ParseResult` types.
+- [x] **T-03** Create `lib/dedupe.ts` (deduplicateSubscriptions) and `lib/csv-export.ts` (exportToCsv). `parseSubscriptionsCsv` lives in `lib/takeout-parser.ts`. Unit-testable pure functions. No JSX.
+- [x] **T-04** Create `lib/estimate.ts` with `migrationEstimate`.
 
-## Phase 1 — Analyze page
+## Phase 1 — Tool page
 
-- [ ] **T-05** Create `components/FileUploader.tsx` — drag-drop + click, validates file type before emitting.
-- [ ] **T-06** Create `components/AnalysisResult.tsx` — displays stats + export button.
-- [ ] **T-07** Create `app/analyze/page.tsx` — wires FileUploader → parse → deduplicate → AnalysisResult.
-- [ ] **T-08** Create `components/WaitlistCta.tsx` — email mailto or embedded form, no custom backend.
+- [x] **T-05** Create `components/upload-zone.tsx` — drag-drop + click, validates file type before emitting.
+- [x] **T-06** Create `components/analysis-result.tsx` — displays stats + export button.
+- [x] **T-07** Create `app/tool/page.tsx` — wires upload-zone → parse → deduplicate → analysis-result. `app/tool/layout.tsx` holds metadata (client page cannot export metadata).
+- [x] **T-08** Create `components/email-capture.tsx` — email mailto or embedded form, no custom backend.
 
 ## Phase 2 — Marketing pages
 
-- [ ] **T-09** `app/pricing/page.tsx`
-- [ ] **T-10** `app/privacy/page.tsx`
-- [ ] **T-11** `app/terms/page.tsx`
+- [x] **T-09** `app/pricing/page.tsx`
+- [x] **T-10** `app/privacy/page.tsx`
+- [x] **T-11** `app/terms/page.tsx`
+
+## Phase 2.5 — SEO content architecture
+
+- [x] **T-10.5** Create guides, resources, compare pages + robots.ts + sitemap.ts (see D-07).
 
 ## Phase 3 — Polish
 
 - [ ] **T-12** Shared `components/Nav.tsx` and `components/Footer.tsx` with links to all pages.
-- [ ] **T-13** Error state UI in analyze page (per ERROR_POLICY.md).
+- [ ] **T-13** Error state UI in tool page (per ERROR_POLICY.md).
 - [ ] **T-14** Accessibility pass — keyboard nav, ARIA labels on interactive elements.
-- [ ] **T-15** `npm run lint && npm run build` clean on all files.
+- [x] **T-15** `npm run lint && npm run build` clean on all files.
 
 ---
 

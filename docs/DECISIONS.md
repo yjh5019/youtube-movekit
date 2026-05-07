@@ -48,6 +48,14 @@ Record significant choices here so future work doesn't re-litigate them.
 
 ---
 
+## D-07 — SEO content architecture: /guides, /resources, /compare
+**Date:** 2026-05-07  
+**Decision:** Evergreen tutorial content lives under `/guides`, reusable reference material under `/resources`, and intent-comparison pages under `/compare`. Each section has an index page and dedicated sub-pages with full Korean copy, JSON-LD structured data (BreadcrumbList + Article), and internal cross-links.  
+**Reason:** Separates three distinct search intents — "how do I do X", "what does X mean / what do I need", and "which approach is better" — for cleaner topical relevance and internal linking. Avoids putting all content on the landing page.  
+**Consequences:** robots.ts and sitemap.ts must enumerate all sub-routes. Individual guide/resource pages carry their own `export const metadata`. The `/tool` page metadata is in `app/tool/layout.tsx` (server wrapper) because the page itself is a client component.
+
+---
+
 ## Template for new decisions
 ```
 ## D-NN — Short title

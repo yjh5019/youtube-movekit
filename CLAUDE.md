@@ -31,4 +31,4 @@
 - Layouts: `app/<route>/layout.tsx`
 - Pure logic (no JSX): `lib/<module>.ts`
 - Components: `components/<Name>.tsx`
-- Types: co-locate with the module that owns them; shared types in `lib/types.ts`
+- Types: co-locate with the module that owns them; shared YouTube domain types in `types/youtube.ts`

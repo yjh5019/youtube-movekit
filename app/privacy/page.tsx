@@ -11,7 +11,7 @@ export default function PrivacyPage() {
         </nav>
 
         <h1 className="text-3xl font-bold text-gray-900">개인정보처리방침</h1>
-        <p className="mt-2 text-sm text-gray-500">최종 업데이트: [날짜 예정]</p>
+        <p className="mt-2 text-sm text-gray-500">최종 업데이트: 2026-05-07</p>
 
         <div className="mt-10 space-y-10">
           <section>
@@ -83,10 +83,32 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-gray-900">6. 문의 및 삭제 요청</h2>
+            <h2 className="text-xl font-bold text-gray-900">6. 광고 및 분석 도구 관련 안내</h2>
+            <ul className="mt-3 space-y-2">
+              {[
+                "현재 MVP는 광고를 표시하지 않습니다.",
+                "현재 Google Analytics, AdSense 등 제3자 분석·광고 도구가 설치되어 있지 않습니다.",
+                "향후 AdSense 또는 분석 도구가 추가되면 쿠키, 제3자 제공업체, 사용자 선택권에 대한 안내를 업데이트합니다.",
+                "현재 업로드 파일은 브라우저에서만 처리되며, 분석·광고 목적으로 사용되지 않습니다.",
+              ].map((item) => (
+                <li key={item} className="flex gap-2 text-sm text-gray-700">
+                  <span className="shrink-0 font-bold text-red-500">+</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-gray-900">7. 문의 및 삭제 요청</h2>
             <p className="mt-3 text-sm text-gray-700">
               문의 또는 이메일 삭제 요청:{" "}
-              <span className="text-gray-400">[contact email placeholder]</span>
+              <a href="mailto:yjhanwlstkd@gmail.com" className="text-red-600 hover:underline font-mono">yjhanwlstkd@gmail.com</a>
+            </p>
+            <p className="mt-2 text-sm text-gray-700">
+              자세한 문의 방법은{" "}
+              <a href="/contact" className="text-red-600 hover:underline">문의 페이지</a>
+              에서 확인하실 수 있습니다.
             </p>
           </section>
         </div>
