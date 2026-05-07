@@ -1,2 +1,2 @@
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://youtube-movekit.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://yt.theeducracker.com";
