@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "Google Takeout으로 YouTube 구독 목록 내보내는 방법 | YouTube MoveKit",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     "Google Takeout에서 YouTube 구독 목록만 선택해 subscriptions.csv를 내보내는 단계별 방법과 파일 구조, 흔한 실수를 설명합니다.",
 };
 
-const BASE = "https://youtube-movekit.vercel.app";
+const BASE = SITE_URL;
 
 const breadcrumb = {
   "@context": "https://schema.org",

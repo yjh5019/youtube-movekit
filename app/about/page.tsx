@@ -98,12 +98,13 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900">향후 계획 (준비 중)</h2>
             <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-              현재는 CSV 분석 기능만 제공됩니다. 향후 공식 YouTube OAuth API를 이용한 실제 구독 이전 기능을 순차적으로 출시할 예정입니다.
-              구체적인 일정은 확정되지 않았으며, 대기자로 등록하시면 출시 시 먼저 안내해 드립니다.
+              현재는 CSV 분석 기능만 제공됩니다. 향후 구독 이전 기능 출시를 검토 중이나,
+              구체적인 방식과 범위는 아직 확정되지 않았으며, API 할당량·플랫폼 정책·계정 상태에 따라 제한될 수 있습니다.
+              대기자로 등록하시면 진행 상황을 먼저 안내해 드립니다.
             </p>
             <p className="mt-2 text-sm text-gray-700 leading-relaxed">
               브라우저 확장 프로그램, 쿠키 추출, 비공식 자동화 방식은 계획에 없습니다.
-              YouTube 정책을 준수하는 공식 API 방식만 사용할 예정입니다.
+              향후 기능이 제공되더라도 플랫폼 정책 및 할당량 범위 안에서만 구현될 예정입니다.
             </p>
           </section>
         </div>

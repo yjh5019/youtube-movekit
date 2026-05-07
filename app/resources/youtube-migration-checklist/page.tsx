@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "YouTube 계정 이전 체크리스트 | YouTube MoveKit",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     "내보내기 전, 이전 전, 이전 후 단계별로 확인해야 할 항목을 정리한 체크리스트입니다. 이전 실수를 줄이는 데 도움이 됩니다.",
 };
 
-const BASE = "https://youtube-movekit.vercel.app";
+const BASE = SITE_URL;
 
 const breadcrumb = {
   "@context": "https://schema.org",

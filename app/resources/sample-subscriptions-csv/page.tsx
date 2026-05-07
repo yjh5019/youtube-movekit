@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "subscriptions.csv 샘플과 컬럼 설명 | YouTube MoveKit",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     "YouTube Takeout subscriptions.csv 파일의 구조, 각 컬럼의 의미, 중복 제거에 Channel Id를 사용하는 이유를 설명합니다.",
 };
 
-const BASE = "https://youtube-movekit.vercel.app";
+const BASE = SITE_URL;
 
 const breadcrumb = {
   "@context": "https://schema.org",

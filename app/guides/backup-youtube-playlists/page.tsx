@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "YouTube 재생목록과 저장 영상을 백업하기 전에 알아야 할 것 | YouTube MoveKit",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     "재생목록, Watch Later, 좋아요 영상의 개념과 Google Takeout으로 백업 가능한 것, 완전한 계정 복원의 한계를 설명합니다.",
 };
 
-const BASE = "https://youtube-movekit.vercel.app";
+const BASE = SITE_URL;
 
 const breadcrumb = {
   "@context": "https://schema.org",

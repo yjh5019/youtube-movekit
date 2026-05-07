@@ -80,8 +80,8 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-gray-900">5. 향후 OAuth/API 이전 기능</h2>
             <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-              향후 구독 이전 기능이 제공될 경우, 공식 OAuth/API 흐름을 사용할 예정입니다.
-              그 경우 요청되는 권한 범위와 데이터 사용 목적을 별도로 안내합니다.
+              향후 구독 이전 기능이 검토될 경우, 플랫폼 정책 및 API 할당량 범위 내에서 구현될 수 있습니다.
+              구체적인 방식은 아직 확정되지 않았으며, 기능 출시 시 요청되는 권한 범위와 데이터 사용 목적을 별도로 안내합니다.
               현재 MVP 1에서는 해당 기능이 제공되지 않습니다.
             </p>
           </section>

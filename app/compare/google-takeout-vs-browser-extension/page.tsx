@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "Google Takeout 방식과 브라우저 확장 프로그램 방식 비교 | YouTube MoveKit",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     "구독 이전 방식을 개인정보 보호, 보안, 편의성, YouTube 정책 준수 측면에서 비교합니다. 어떤 방식이 자신에게 맞는지 확인하세요.",
 };
 
-const BASE = "https://youtube-movekit.vercel.app";
+const BASE = SITE_URL;
 
 const breadcrumb = {
   "@context": "https://schema.org",

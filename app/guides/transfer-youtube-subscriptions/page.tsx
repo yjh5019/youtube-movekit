@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: "YouTube 구독 목록을 새 계정으로 옮기기 전에 알아야 할 것 | YouTube MoveKit",
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
     "이전 가능한 항목과 불가능한 항목, API 할당량 제한, 브라우저 확장 프로그램 위험성, 안전한 이전 워크플로를 설명합니다.",
 };
 
-const BASE = "https://youtube-movekit.vercel.app";
+const BASE = SITE_URL;
 
 const breadcrumb = {
   "@context": "https://schema.org",
@@ -210,7 +211,7 @@ export default function TransferSubscriptionsGuidePage() {
             <p className="mt-2 text-sm text-gray-700 leading-relaxed">
               YouTube MoveKit은 Google 계정 비밀번호, 쿠키, 세션 토큰을 요구하거나 수집하지 않습니다.
               현재 제공되는 CSV 분석 기능은 파일을 브라우저에서만 처리합니다.
-              향후 이전 기능은 공식 YouTube OAuth API 방식으로만 구현될 예정입니다.
+              향후 이전 기능이 제공될 경우, 플랫폼 정책 및 API 할당량 범위 내에서 구현될 예정입니다.
             </p>
           </section>
         </div>
