@@ -9,13 +9,6 @@ export const metadata: Metadata = {
 
 const GUIDES = [
   {
-    href: "/guides/google-takeout-youtube-subscriptions",
-    title: "Google Takeout으로 YouTube 구독 목록 내보내는 방법",
-    description:
-      "Google Takeout 사이트에서 구독 목록만 선택해 내보내는 단계별 방법과 subscriptions.csv 파일 구조를 설명합니다.",
-    readTime: "5분",
-  },
-  {
     href: "/guides/transfer-youtube-subscriptions",
     title: "YouTube 구독 목록을 새 계정으로 옮기기 전에 알아야 할 것",
     description:
@@ -34,6 +27,13 @@ const GUIDES = [
     title: "유튜브 시청 기록 옮기기, 직접 이전은 어렵습니다",
     description:
       "YouTube API 제한으로 시청 기록 직접 이전은 불가능합니다. Takeout 개인 백업 방법과 현실적인 대안을 설명합니다.",
+    readTime: "5분",
+  },
+  {
+    href: "/guides/google-takeout-youtube-subscriptions",
+    title: "Google Takeout으로 YouTube 구독 목록 내보내는 방법",
+    description:
+      "Google Takeout 사이트에서 구독 목록만 선택해 내보내는 단계별 방법과 subscriptions.csv 파일 구조를 설명합니다.",
     readTime: "5분",
   },
 ];

@@ -183,16 +183,48 @@ export default function Home() {
       {/* Guides, Resources, Compare */}
       <section className="bg-gray-50 px-4 py-16">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-2xl font-bold text-gray-900">가이드 및 리소스</h2>
+          <h2 className="text-2xl font-bold text-gray-900">이전 가이드</h2>
           <p className="mt-2 text-sm text-gray-500">
             YouTube 계정 이전을 처음 준비하는 분을 위한 단계별 가이드 모음입니다.
           </p>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mt-6 space-y-3">
+            <Link
+              href="/guides/transfer-youtube-subscriptions"
+              className="flex items-start justify-between gap-4 rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
+            >
+              <div>
+                <p className="font-semibold text-gray-900">유튜브 구독 옮기기</p>
+                <p className="mt-1 text-sm text-gray-500">구독 목록을 새 계정으로 옮기기 전에 알아야 할 것</p>
+              </div>
+              <span className="shrink-0 text-gray-400">→</span>
+            </Link>
+            <Link
+              href="/guides/transfer-youtube-playlists"
+              className="flex items-start justify-between gap-4 rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
+            >
+              <div>
+                <p className="font-semibold text-gray-900">유튜브 재생 목록 옮기기</p>
+                <p className="mt-1 text-sm text-gray-500">옮기기 전에 백업 가능한 데이터와 제한사항 확인</p>
+              </div>
+              <span className="shrink-0 text-gray-400">→</span>
+            </Link>
+            <Link
+              href="/guides/transfer-youtube-watch-history"
+              className="flex items-start justify-between gap-4 rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
+            >
+              <div>
+                <p className="font-semibold text-gray-900">유튜브 시청 기록 옮기기</p>
+                <p className="mt-1 text-sm text-gray-500">직접 이전은 어렵습니다 — Takeout 백업과 현실적인 대안 안내</p>
+              </div>
+              <span className="shrink-0 text-gray-400">→</span>
+            </Link>
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
             <Link
               href="/guides"
               className="flex flex-col rounded-xl border border-gray-200 bg-white p-4 hover:border-red-200 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 transition-colors"
             >
-              <p className="font-semibold text-gray-900">이전 가이드</p>
+              <p className="font-semibold text-gray-900">전체 가이드</p>
               <p className="mt-1 text-sm text-gray-500">Takeout 내보내기, 구독 이전 준비, 재생목록 백업</p>
             </Link>
             <Link

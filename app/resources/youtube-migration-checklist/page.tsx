@@ -188,6 +188,8 @@ export default function MigrationChecklistPage() {
           <span className="text-gray-500">관련 페이지:</span>
           <Link href="/guides/google-takeout-youtube-subscriptions" className="text-red-600 hover:underline">Google Takeout 내보내기</Link>
           <Link href="/guides/transfer-youtube-subscriptions" className="text-red-600 hover:underline">구독 이전 준비</Link>
+          <Link href="/guides/transfer-youtube-playlists" className="text-red-600 hover:underline">재생 목록 옮기기</Link>
+          <Link href="/guides/transfer-youtube-watch-history" className="text-red-600 hover:underline">시청 기록 옮기기</Link>
           <Link href="/resources/sample-subscriptions-csv" className="text-red-600 hover:underline">CSV 샘플 보기</Link>
         </div>
       </div>
