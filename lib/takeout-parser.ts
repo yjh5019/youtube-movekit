@@ -5,22 +5,37 @@ import type { YouTubeSubscription, ParseResult } from "@/types/youtube";
 // ---------------------------------------------------------------------------
 
 const TITLE_HEADERS = new Set([
+  // English
   "channeltitle",
   "channel title",
   "title",
-  "channel title",
+  // Korean (post-normalization — lowercase applied to any ASCII portions)
+  "채널 제목",
+  "채널명",
+  "채널 이름",
+  "제목",
+  "이름",
 ]);
 
 const URL_HEADERS = new Set([
+  // English
   "channelurl",
   "channel url",
   "url",
+  // Korean (post-normalization)
+  "채널 url",
+  "채널 주소",
 ]);
 
 const ID_HEADERS = new Set([
+  // English
   "channelid",
   "channel id",
   "channel identifier",
+  // Korean (post-normalization — "ID"/"Id" all become "id")
+  "채널 id",
+  "채널 아이디",
+  "채널 식별자",
 ]);
 
 function normalizeHeader(h: string): string {
@@ -166,7 +181,8 @@ export function parseSubscriptionsCsv(
     return {
       ok: false,
       error:
-        `인식할 수 있는 열이 없습니다. "Channel Title", "Channel URL", "Channel Id" 헤더가 포함된 파일이 필요합니다. ` +
+        `인식할 수 있는 열이 없습니다. ` +
+        `지원되는 헤더 예시: Channel Title, Channel URL, Channel Id 또는 채널 제목, 채널 URL, 채널 ID. ` +
         `발견된 헤더: ${headers.join(", ")}. ` +
         `YouTube 데이터 보관함에서 파일을 다시 다운로드해 주세요.`,
     };
