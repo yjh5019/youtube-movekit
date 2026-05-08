@@ -103,8 +103,8 @@ export default function TransferPlaylistsGuidePage() {
           유튜브 재생 목록 옮기기 — 가능한 것과 불가능한 것
         </h1>
         <p className="mt-4 text-base text-gray-600 leading-relaxed">
-          유튜브 재생 목록 옮기기를 계획 중이라면, 시작 전에 무엇이 가능하고 무엇이 불가능한지
-          먼저 파악하는 것이 중요합니다. 잘못된 기대로 시작하면 중간에 막힐 수 있습니다.
+          유튜브 재생 목록 옮기기를 계획 중이라면, 옮기기 전에 백업 가능한 데이터와 제한사항을
+          먼저 확인하는 것이 중요합니다. 잘못된 기대로 시작하면 중간에 막힐 수 있습니다.
         </p>
 
         {/* Summary box */}
@@ -124,6 +124,40 @@ export default function TransferPlaylistsGuidePage() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* MVP scope table */}
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="rounded-xl border border-green-200 bg-green-50 p-4">
+            <p className="font-semibold text-sm text-green-800 mb-3">지금 확인할 수 있는 것</p>
+            <ul className="space-y-2 text-sm text-green-900">
+              {[
+                "재생목록 구조 확인",
+                "저장 영상 목록 백업 가능성 검토",
+                "비공개 재생목록 복원 방식 검토",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="shrink-0 text-green-600">✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
+            <p className="font-semibold text-sm text-amber-800 mb-3">현재 MVP에서 제한되는 것</p>
+            <ul className="space-y-2 text-sm text-amber-900">
+              {[
+                "재생목록 자동 이전",
+                "Watch Later 완전 복원",
+                "모든 영상 접근 보장",
+              ].map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="shrink-0 text-amber-600">—</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-10 space-y-10">
@@ -194,6 +228,14 @@ export default function TransferPlaylistsGuidePage() {
                   YouTube의 특수 내장 재생목록입니다. Takeout으로 백업할 수 있으나,
                   새 계정의 Watch Later 목록으로 직접 복원하는 것은 YouTube API가 지원하지 않습니다.
                   대신 일반 재생목록으로 만들어 보관하는 것이 현실적인 대안입니다.
+                </p>
+              </div>
+              <div className="rounded-xl border border-gray-200 p-4">
+                <p className="font-semibold text-sm text-gray-900">좋아요 영상 목록 (Liked Videos)</p>
+                <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                  좋아요를 누른 영상이 모이는 자동 재생목록입니다. Takeout으로 목록을 내보낼 수 있지만,
+                  새 계정에서 동일한 영상에 좋아요를 다시 표시하려면 YouTube API 할당량에 따라
+                  처리 속도가 제한됩니다. 영상이 삭제되거나 비공개 처리된 경우 복원이 불가능합니다.
                 </p>
               </div>
             </div>
@@ -278,6 +320,14 @@ export default function TransferPlaylistsGuidePage() {
             </div>
           </section>
 
+          <section className="rounded-xl border border-gray-100 bg-gray-50 p-5">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              <span className="font-semibold text-gray-900">향후 기능 안내:</span>{" "}
+              향후 재생목록 복원 기능이 제공되더라도 플랫폼 정책, API 할당량, 영상 공개 상태에 따라 제한될 수 있습니다.
+              현재 YouTube MoveKit은 재생목록 이전을 지원하지 않으며, 구독 목록 분석과 중복 제거만 제공합니다.
+            </p>
+          </section>
+
           <section className="rounded-xl border border-gray-200 bg-gray-50 p-5">
             <h2 className="text-base font-bold text-gray-900">개인정보 및 보안 안내</h2>
             <p className="mt-2 text-sm text-gray-700 leading-relaxed">
@@ -289,13 +339,13 @@ export default function TransferPlaylistsGuidePage() {
         </div>
 
         <div className="mt-10 rounded-xl bg-red-50 border border-red-200 p-5">
-          <p className="font-semibold text-red-900">재생 목록 이전 전에 구독 목록부터 분석하세요</p>
+          <p className="font-semibold text-red-900">재생 목록 이전 전에 구독 목록부터 확인하세요</p>
           <p className="mt-1 text-sm text-red-700">중복 구독을 제거하고 이전 예상 기간을 먼저 확인하면 전체 이전 계획을 세우기 쉬워집니다.</p>
           <Link
             href="/tool"
             className="mt-4 inline-block rounded-xl bg-red-600 px-6 py-3 text-sm font-semibold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300"
           >
-            구독 목록 분석하기
+            먼저 구독 목록부터 분석하기
           </Link>
         </div>
 
@@ -304,6 +354,7 @@ export default function TransferPlaylistsGuidePage() {
           <Link href="/guides/google-takeout-youtube-subscriptions" className="text-red-600 hover:underline">Google Takeout 내보내기</Link>
           <Link href="/guides/transfer-youtube-subscriptions" className="text-red-600 hover:underline">구독 이전 준비</Link>
           <Link href="/guides/transfer-youtube-watch-history" className="text-red-600 hover:underline">시청 기록 옮기기</Link>
+          <Link href="/resources/youtube-migration-checklist" className="text-red-600 hover:underline">이전 체크리스트</Link>
         </div>
       </div>
     </main>

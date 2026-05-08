@@ -111,8 +111,8 @@ export default function TransferWatchHistoryGuidePage() {
           유튜브 시청 기록 옮기기, 직접 이전은 어렵습니다
         </h1>
         <p className="mt-4 text-base text-gray-600 leading-relaxed">
-          계정을 바꿀 때 시청 기록까지 그대로 옮기고 싶은 마음은 이해하지만,
-          YouTube API의 기술적 제한으로 인해 시청 기록을 새 계정으로 직접 이전하는 것은 현재 불가능합니다.
+          유튜브 시청 기록 옮기기를 원하는 분들이 많지만, YouTube API의 기술적 제한으로
+          인해 시청 기록을 새 계정으로 직접 이전하는 것은 어렵습니다.
           이 가이드에서는 그 이유와 현실적인 대안을 설명합니다.
         </p>
 
@@ -159,43 +159,37 @@ export default function TransferWatchHistoryGuidePage() {
 
           <section>
             <h2 className="text-xl font-bold text-gray-900">시청 기록 관련 가능 여부 요약</h2>
-            <div className="mt-4 overflow-x-auto rounded-xl border border-gray-200">
-              <table className="min-w-full text-sm">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">항목</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">가능 여부</th>
-                    <th className="px-4 py-3 text-left font-semibold text-gray-700">비고</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  <tr>
-                    <td className="px-4 py-3 text-gray-800">Google Takeout으로 개인 백업</td>
-                    <td className="px-4 py-3 text-green-700 font-medium">가능</td>
-                    <td className="px-4 py-3 text-gray-600">JSON 파일로 내보내기, 개인 기록 보관 목적</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-800">새 계정으로 직접 이전</td>
-                    <td className="px-4 py-3 text-red-700 font-medium">불가능</td>
-                    <td className="px-4 py-3 text-gray-600">YouTube API 시청 기록 쓰기 미지원</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-800">추천 알고리즘 즉시 복원</td>
-                    <td className="px-4 py-3 text-red-700 font-medium">불가능</td>
-                    <td className="px-4 py-3 text-gray-600">새 계정은 개인화 초기화 상태에서 시작</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-800">구독 이전 후 알고리즘 재적응</td>
-                    <td className="px-4 py-3 text-green-700 font-medium">가능</td>
-                    <td className="px-4 py-3 text-gray-600">구독 채널 시청 패턴이 쌓이면서 점진적 개선</td>
-                  </tr>
-                  <tr>
-                    <td className="px-4 py-3 text-gray-800">중요 영상 재생목록 정리</td>
-                    <td className="px-4 py-3 text-green-700 font-medium">가능</td>
-                    <td className="px-4 py-3 text-gray-600">다시 보고 싶은 영상은 재생목록으로 따로 관리</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-green-200 bg-green-50 p-4">
+                <p className="font-semibold text-sm text-green-800 mb-3">가능한 것</p>
+                <ul className="space-y-2 text-sm text-green-900">
+                  {[
+                    "Takeout으로 기록 확인 및 백업 가능성 검토",
+                    "자주 본 채널 파악",
+                    "새 계정 세팅 참고",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="shrink-0 text-green-600">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="rounded-xl border border-red-100 bg-red-50 p-4">
+                <p className="font-semibold text-sm text-red-800 mb-3">어려운 것</p>
+                <ul className="space-y-2 text-sm text-red-900">
+                  {[
+                    "새 계정 시청 기록으로 그대로 복원",
+                    "추천 알고리즘 복제",
+                    "홈 피드 개인화 이전",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="shrink-0 text-red-500">✕</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </section>
 
@@ -233,16 +227,20 @@ export default function TransferWatchHistoryGuidePage() {
             <ul className="mt-4 space-y-3">
               {[
                 {
-                  title: "구독 목록 이전 (가장 중요)",
-                  desc: "자주 보던 채널들을 새 계정에서 다시 구독하면, 해당 채널의 영상이 피드에 노출되고 시청 패턴이 쌓이면서 알고리즘이 적응합니다.",
+                  title: "자주 본 채널 다시 구독",
+                  desc: "자주 보던 채널들을 새 계정에서 다시 구독하면 해당 채널의 영상이 피드에 노출되고 시청 패턴이 쌓이면서 알고리즘이 적응합니다.",
                 },
                 {
-                  title: "중요 영상 재생목록으로 정리",
-                  desc: "다시 보고 싶거나 기억해두고 싶은 영상들을 재생목록에 저장해두면, 시청 기록이 없어도 중요한 콘텐츠에 쉽게 접근할 수 있습니다.",
+                  title: "중요한 영상은 재생목록으로 정리",
+                  desc: "다시 보고 싶거나 기억해두고 싶은 영상들을 재생목록에 저장해두면 시청 기록이 없어도 중요한 콘텐츠에 쉽게 접근할 수 있습니다.",
                 },
                 {
-                  title: "홈 피드 개인화 직접 설정",
-                  desc: "새 계정에서 관심 없는 채널은 '관심 없음', 좋아하는 주제는 적극적으로 시청해 알고리즘이 빠르게 적응하도록 유도합니다.",
+                  title: "구독 목록부터 정리",
+                  desc: "Google Takeout으로 기존 구독 목록을 내보내고 분석하면 자주 보던 채널을 파악하고 새 계정 구독을 효율적으로 설정하는 기준이 됩니다.",
+                },
+                {
+                  title: "새 계정에서 관심 주제 기반으로 다시 학습",
+                  desc: "관심 없는 콘텐츠는 '관심 없음' 처리하고, 좋아하는 주제는 적극적으로 시청해 알고리즘이 빠르게 적응하도록 유도합니다.",
                 },
               ].map((item) => (
                 <li key={item.title} className="flex gap-3 rounded-xl border border-gray-200 p-4">
@@ -308,7 +306,7 @@ export default function TransferWatchHistoryGuidePage() {
             href="/tool"
             className="mt-4 inline-block rounded-xl bg-red-600 px-6 py-3 text-sm font-semibold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300"
           >
-            구독 목록 분석하기
+            먼저 구독 목록 분석하기
           </Link>
         </div>
 
@@ -317,6 +315,7 @@ export default function TransferWatchHistoryGuidePage() {
           <Link href="/guides/transfer-youtube-subscriptions" className="text-red-600 hover:underline">구독 이전 준비</Link>
           <Link href="/guides/transfer-youtube-playlists" className="text-red-600 hover:underline">재생 목록 옮기기</Link>
           <Link href="/guides/google-takeout-youtube-subscriptions" className="text-red-600 hover:underline">Google Takeout 내보내기</Link>
+          <Link href="/resources/youtube-migration-checklist" className="text-red-600 hover:underline">이전 체크리스트</Link>
         </div>
       </div>
     </main>
