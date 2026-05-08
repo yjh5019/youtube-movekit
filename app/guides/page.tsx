@@ -23,10 +23,17 @@ const GUIDES = [
     readTime: "7분",
   },
   {
-    href: "/guides/backup-youtube-playlists",
-    title: "YouTube 재생목록과 저장 영상을 백업하기 전에 알아야 할 것",
+    href: "/guides/transfer-youtube-playlists",
+    title: "유튜브 재생 목록 옮기기 — 가능한 것과 불가능한 것",
     description:
-      "재생목록, Watch Later, 좋아요 표시 영상의 개념과 Takeout으로 백업할 수 있는 것과 없는 것을 설명합니다.",
+      "공개 재생목록 재생성 방법, 비공개 재생목록의 한계, Watch Later 대안, Google Takeout 백업 방법을 설명합니다.",
+    readTime: "6분",
+  },
+  {
+    href: "/guides/transfer-youtube-watch-history",
+    title: "유튜브 시청 기록 옮기기, 직접 이전은 어렵습니다",
+    description:
+      "YouTube API 제한으로 시청 기록 직접 이전은 불가능합니다. Takeout 개인 백업 방법과 현실적인 대안을 설명합니다.",
     readTime: "5분",
   },
 ];

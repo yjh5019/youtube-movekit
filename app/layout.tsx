@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "YouTube MoveKit — 구독 목록 분석 및 이전 준비",
   description:
     "Google Takeout subscriptions.csv를 업로드하면 중복 구독을 제거하고 이전 준비를 시작할 수 있습니다. 브라우저 전용 처리, 서버 저장 없음.",
+  verification: {
+    google: "3Ng84arb1Plmc_4_ZTmLMpml-A7tFptLmq4VyfrrJYU",
+  },
 };
 
 export default function RootLayout({
